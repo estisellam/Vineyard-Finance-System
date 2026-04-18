@@ -1,161 +1,92 @@
 # Winery Finance Management System
 
-## Overview
-A full-stack data-driven system for managing financial operations in a winery.
+A financial management system for a winery, combining relational database design, SQL-based analytics, and a Python-based graphical interface.
 
-The project includes database design, data processing, business logic, and a graphical user interface, built on top of PostgreSQL.
+---
+
+## Overview
+
+This project implements a data-driven system for managing financial operations within a winery.  
+The system was designed from scratch, including database modeling, data population, complex queries, and integration with a graphical user interface.
+
+It demonstrates strong emphasis on relational database design, data integrity, and database-driven business logic.
 
 ---
 
 ## Key Features
 
-- Relational database design using ERD and normalization  
-- Complex SQL queries (SELECT, UPDATE, DELETE, aggregations)  
-- Constraints and data integrity enforcement  
-- Stored procedures, functions, and triggers (PL/pgSQL)  
-- Data integration between multiple schemas  
-- Graphical user interface built with Python (Tkinter)  
-- Real-time data interaction with PostgreSQL  
+- Unified payment system (income, expenses, salaries, investments)
+- Advanced SQL queries (joins, aggregations, filtering, grouping)
+- Data integrity enforced using constraints and foreign keys
+- Automated financial summaries using triggers and procedures
+- Role-based employee system (guides, workers, admins)
+- Graphical user interface built with Python (Tkinter)
 
 ---
 
 ## System Architecture
 
-The system is composed of three main layers:
+- Database: PostgreSQL  
+- Business Logic: PL/pgSQL (functions, procedures, triggers)  
+- Application Layer: Python  
+- User Interface: Tkinter  
 
-- **Database Layer**
-  - PostgreSQL schema design
-  - Tables, constraints, and relationships
-  - Views for data abstraction
-
-- **Logic Layer**
-  - Stored procedures and functions
-  - Business logic implementation
-  - Data aggregation and validation
-
-- **Application Layer**
-  - Python GUI (Tkinter)
-  - CRUD operations
-  - Data visualization (matplotlib)
+The system separates data storage, business logic, and presentation layers, while maintaining consistency and reliability through database-level enforcement.
 
 ---
 
-## Database Design
+## Database Design Highlights
 
-Includes:
-
-- ERD (Entity Relationship Diagram)
-- DSD (Database Schema Diagram)
-- Multiple related entities such as:
-  - Employees
-  - Payments
-  - Budgets
-  - Investments
-  - Purchases
-  - Taxes
-  - Salaries
-
-![ERD](link_here)
-![DSD](link_here)
+- Central `payment` table for all financial operations  
+- Separation of entities:
+  - employees  
+  - salaries  
+  - purchases  
+  - investments  
+  - taxes  
+- Use of foreign keys to maintain relationships  
+- Normalized schema to reduce redundancy  
+- Configurable tax system without requiring schema changes  
 
 ---
 
-## Advanced Database Features
+## Advanced Database Logic
 
-### Queries
-- Complex joins across multiple tables  
-- Aggregations and grouping  
-- Filtering and sorting with conditions  
-
-### Transactions
-- Use of `BEGIN`, `COMMIT`, `ROLLBACK`  
-- Data consistency handling  
-
-### Constraints
-- NOT NULL  
-- CHECK  
-- DEFAULT values  
-
-### Views
-- Aggregated views for reporting  
-- Business-oriented data abstraction  
+- Stored procedures for generating financial summaries  
+- Triggers for automatic updates (`summary_report`)  
+- Views for analytical queries  
+- Transaction management using COMMIT and ROLLBACK  
 
 ---
 
-## Stored Procedures and Functions
+## Application Screens
 
-- Business logic implemented inside the database  
-- Data aggregation and reporting  
-- Parameterized functions returning dynamic results  
+### Main Menu
+![Main Menu](https://github.com/estisellam/department-finance---winery/blob/main/DBProject/%D7%A9%D7%9C%D7%91%20%D7%94/selection_screen.png)
 
----
+### Employee Management
+![Employee Management](https://github.com/estisellam/department-finance---winery/blob/main/DBProject/%D7%A9%D7%9C%D7%91%20%D7%94/employee_management.png)
 
-## Triggers
+### Payment Summary
+![Summary Report](https://github.com/estisellam/department-finance---winery/blob/main/DBProject/%D7%A9%D7%9C%D7%91%20%D7%91/summary_reports.png)
 
-- Validation before insert operations  
-- Automatic updates of summary tables  
-- Real-time data consistency enforcement  
-
----
-
-## Data Integration
-
-- Merging schemas from different domains  
-- Resolving conflicts between table structures  
-- Maintaining consistency across integrated data  
-
----
-
-## GUI Application
-
-A desktop interface built with Python (Tkinter):
-
-### Features:
-- Employee management (CRUD)
-- Salary management
-- Tour management
-- Payment summaries
-- Data filtering and sorting
-- Graph visualization (matplotlib)
-
-### Screens:
-- Main menu dashboard  
-- Employee management  
-- Salary management  
-- Tour management  
-- Summary reports  
-- Data analysis graphs  
-
----
-
-## Technologies
-
-- PostgreSQL  
-- SQL / PLpgSQL  
-- Python  
-- Tkinter  
-- Matplotlib  
-- Git / GitHub  
-
----
-
-## Key Learnings
-
-- Designing relational databases from scratch  
-- Writing complex SQL queries and optimizing them  
-- Implementing business logic in the database layer  
-- Integrating multiple data sources  
-- Building a full-stack data-driven application  
-- Connecting a GUI to a live database system  
+### Guides Analysis
+![Guides](https://github.com/estisellam/department-finance---winery/blob/main/DBProject/%D7%A9%D7%9C%D7%91%20%D7%94/experienced_guides.png)
 
 ---
 
 ## How to Run
 
-1. Setup PostgreSQL database  
-2. Run SQL scripts to create schema and populate data  
-3. Install Python dependencies  
-4. Run the application:
+### Requirements
+
+- Python 3.10+
+- PostgreSQL
+
+### Steps
+
+1. Create and start a PostgreSQL database
+2. Run the SQL scripts to create tables, constraints, and logic
+3. Run the application:
 
 ```bash
 python opening_screen.py
